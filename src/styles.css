@@ -3,6 +3,12 @@
   contain: layout;
 }
 
+.main-header-text {
+  view-transition-name: main-header-text;
+  contain: layout;
+  width: fit-content;
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
 }
