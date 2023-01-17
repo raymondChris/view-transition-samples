@@ -3,10 +3,10 @@ import {
   onLinkNavigate,
   transitionHelper,
   getLink,
-} from "./utils.js";
+} from "../utils.js";
 
 const galleryPath = "/";
-const catsPath = `${galleryPath}cats/`;
+const catsPath = `/cats/`;
 
 function getNavigationType(fromPath, toPath) {
   if (fromPath.startsWith(catsPath) && toPath === galleryPath) {
@@ -32,6 +32,7 @@ onLinkNavigate(async ({ fromPath, toPath }) => {
   }
 
   const transition = transitionHelper({
+    classNames: navigationType,
     updateDOM() {
       // This is a pretty heavy-handed way to update page content.
       // In production, you'd likely be modifying DOM elements directly,

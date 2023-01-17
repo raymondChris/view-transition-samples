@@ -124,3 +124,8 @@ body {
   display: grid;
   grid-template-rows: max-content 1fr;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 5s;
+}

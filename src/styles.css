@@ -1,21 +1,21 @@
 .main-header {
   view-transition-name: main-header;
-  contain: layout;
+  contain: paint;
 }
 
 .main-header-text {
   view-transition-name: main-header-text;
-  contain: layout;
+  contain: paint;
   width: fit-content;
 }
 
 .banner-img img {
   view-transition-name: banner-img;
-  contain: layout;
+  contain: paint;
 }
 
 .gallery img {
-  contain: layout;
+  contain: paint;
 }
 
 @keyframes fade-in {
@@ -48,8 +48,26 @@
 ::view-transition-new(banner-img) {
   animation: none;
   mix-blend-mode: normal;
+  height: 100%;
+  overflow: clip;
 }
 
 ::view-transition-image-pair(banner-img) {
   isolation: none;
+}
+
+.gallery-to-cat-page::view-transition-old(banner-img) {
+  object-fit: contain;
+}
+
+.gallery-to-cat-page::view-transition-new(banner-img) {
+  object-fit: cover;
+}
+
+.cat-page-to-gallery::view-transition-old(banner-img) {
+  object-fit: cover;
+}
+
+.cat-page-to-gallery::view-transition-new(banner-img) {
+  object-fit: contain;
 }
